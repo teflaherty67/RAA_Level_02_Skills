@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RAA_Level_02"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="400"
+             d:DesignHeight="400" d:DesignWidth="600"
              Title="Revit Add-in Academy">
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -13,7 +13,8 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -36,6 +37,20 @@
             <CheckBox x:Name="chbCheck2" Margin="0,0,0,5" >This is checkbox 2</CheckBox>
             <CheckBox x:Name="chbCheck3" Margin="0,0,0,5" >This is checkbox 3</CheckBox>
         </StackPanel>
-        <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 1"></RadioButton>
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 1" Margin="0,0,10,0" GroupName="Group1" IsChecked="True"></RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 2" Margin="0,0,10,0" GroupName="Group 1"></RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 3" GroupName="Group1"></RadioButton>            
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 4" Margin="0,0,10,0" GroupName="Group2" IsChecked="True"></RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 5" Margin="0,0,10,0" GroupName="Group2"></RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 6" GroupName="Group2"></RadioButton>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button x:Name="btnOK" Content="OK" Width="100" Height="30" Margin="0,0,10,0"></Button>
+            <Button x:Name="btnCancel" Content="Cancel" Width="100" Height="30"></Button>
+        </StackPanel>
+
     </Grid>
 </Window>
