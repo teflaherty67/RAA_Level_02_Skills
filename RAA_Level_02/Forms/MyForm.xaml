@@ -39,7 +39,7 @@
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
             <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 1" Margin="0,0,10,0" GroupName="Group1" IsChecked="True"></RadioButton>
-            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 2" Margin="0,0,10,0" GroupName="Group 1"></RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 2" Margin="0,0,10,0" GroupName="Group1"></RadioButton>
             <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 3" GroupName="Group1"></RadioButton>            
         </StackPanel>
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
@@ -51,6 +51,5 @@
             <Button x:Name="btnOK" Content="OK" Width="100" Height="30" Margin="0,0,10,0"></Button>
             <Button x:Name="btnCancel" Content="Cancel" Width="100" Height="30"></Button>
         </StackPanel>
-
     </Grid>
 </Window>

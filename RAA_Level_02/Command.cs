@@ -28,10 +28,10 @@ namespace RAA_Level_02
 
             // step 1: put any code needed for the form here
 
-            // open form
+            // step 2: open form
             MyForm currentForm = new MyForm()
             {
-                Width = 800,
+                Width = 500,
                 Height = 450,
                 WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
                 Topmost = true,
@@ -39,7 +39,7 @@ namespace RAA_Level_02
 
             currentForm.ShowDialog();
 
-            // get form data and do something
+            // Step 3: get form data and do something
 
             return Result.Succeeded;
         }
