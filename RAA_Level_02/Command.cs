@@ -29,7 +29,7 @@ namespace RAA_Level_02
             // step 1: put any code needed for the form here
 
             // step 2: open form
-            MyForm currentForm = new MyForm()
+            MyForm curForm = new MyForm()
             {
                 Width = 500,
                 Height = 450,
@@ -37,9 +37,18 @@ namespace RAA_Level_02
                 Topmost = true,
             };
 
-            currentForm.ShowDialog();
+            curForm.ShowDialog();
 
             // Step 3: get form data and do something
+
+            if(curForm.DialogResult == false)
+            {
+                return Result.Cancelled;
+            }
+
+            // do something
+
+            string tbxResult = curForm.tbxFile.Text;
 
             return Result.Succeeded;
         }

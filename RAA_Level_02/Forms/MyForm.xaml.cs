@@ -30,5 +30,23 @@ namespace RAA_Level_02
         {
 
         }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            this.DialogResult = true;
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            this.DialogResult = false;
+        }
+
+        public string GetTextBoxValue()
+        {
+            return tbxFile.Text;
+        }
+
     }
 }
