@@ -28,19 +28,19 @@ namespace RAA_Level_02
 
         private void btnSelect_Click(object sender, RoutedEventArgs e)
         {
-
+            tbxFile.Text = "I clicked the button";
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             this.DialogResult = true;
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             this.DialogResult = false;
+            this.Close();
         }
 
         public string GetTextBoxValue()
@@ -48,5 +48,22 @@ namespace RAA_Level_02
             return tbxFile.Text;
         }
 
+        public bool GetCheckbox1()
+        {
+            if(chbCheck1.IsChecked == true)
+                return true;
+            else
+                return false;
+        }
+
+        public string GetGroup1()
+        {
+            if (rb1.IsChecked == true)
+                return rb1.Content.ToString();
+            else if (rb2.IsChecked == true)
+                return rb2.Content.ToString();
+            else
+                return  rb3.Content.ToString();
+        }
     }
 }

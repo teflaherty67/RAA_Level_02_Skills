@@ -39,7 +39,7 @@ namespace RAA_Level_02
 
             curForm.ShowDialog();
 
-            // Step 3: get form data and do something
+            // Step 4: get form data and do something
 
             if(curForm.DialogResult == false)
             {
@@ -49,6 +49,19 @@ namespace RAA_Level_02
             // do something
 
             string tbxResult = curForm.tbxFile.Text;
+
+            bool chbCheck1Result = curForm.GetCheckbox1();
+
+            string rbGroup1Result = curForm.GetGroup1();
+
+            TaskDialog.Show("Test", "text box result is " + tbxResult);
+
+            if(chbCheck1Result == true)
+            {
+                TaskDialog.Show("Test", "Checkbox 1 was selected");
+            }
+
+            TaskDialog.Show("Test", rbGroup1Result);
 
             return Result.Succeeded;
         }

@@ -38,9 +38,9 @@
             <CheckBox x:Name="chbCheck3" Margin="0,0,0,5" >This is checkbox 3</CheckBox>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
-            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 1" Margin="0,0,10,0" GroupName="Group1" IsChecked="True"></RadioButton>
-            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 2" Margin="0,0,10,0" GroupName="Group1"></RadioButton>
-            <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 3" GroupName="Group1"></RadioButton>            
+            <RadioButton x:Name="rb1" Grid.Row="4" Grid.Column="1" Content="Option 1" Margin="0,0,10,0" GroupName="Group1" IsChecked="True"></RadioButton>
+            <RadioButton x:Name="rb2" Grid.Row="4" Grid.Column="1" Content="Option 2" Margin="0,0,10,0" GroupName="Group1"></RadioButton>
+            <RadioButton x:Name="rb3" Grid.Row="4" Grid.Column="1" Content="Option 3" GroupName="Group1"></RadioButton>            
         </StackPanel>
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
             <RadioButton Grid.Row="4" Grid.Column="1" Content="Option 4" Margin="0,0,10,0" GroupName="Group2" IsChecked="True"></RadioButton>
