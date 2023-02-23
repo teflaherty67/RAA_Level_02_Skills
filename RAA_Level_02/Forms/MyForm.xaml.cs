@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,18 @@ namespace RAA_Level_02
 
         private void btnSelect_Click(object sender, RoutedEventArgs e)
         {
-            tbxFile.Text = "I clicked the button";
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.InitialDirectory = "c:\\";
+            openFile.Filter = "csv files (*.csv)|*.csv";
+
+            if(openFile.ShowDialog() == true)
+            {
+                tbxFile.Text = openFile.FileName;
+            }
+            else
+            {
+                tbxFile.Text = "";
+            }
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
