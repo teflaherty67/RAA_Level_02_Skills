@@ -11,7 +11,7 @@ using System.Windows.Markup;
 
 #endregion
 
-namespace RAA_Level_02
+namespace RAA_Level_02_Skills
 {
     internal class App : IExternalApplication
     {
@@ -31,7 +31,7 @@ namespace RAA_Level_02
             RibbonPanel panel = Utils.CreateRibbonPanel(app, "Revit Add-in Academy", "Revit Tools");
 
             // 3. Create button data instances
-            ButtonDataClass myButtonData = new ButtonDataClass("btnRAA_Level_02", "My Button", Command.GetMethod(), Properties.Resources.Blue_32, Properties.Resources.Blue_16, "This is a tooltip");
+            ButtonDataClass myButtonData = new ButtonDataClass("btnRAA_Level_02_Skills", "My Button", Command.GetMethod(), Properties.Resources.Blue_32, Properties.Resources.Blue_16, "This is a tooltip");
 
             // 4. Create buttons
             PushButton myButton = panel.AddItem(myButtonData.Data) as PushButton;

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAA_Level_02", "RAA_Level_02\RAA_Level_02.csproj", "{20550946-65A2-494F-AD25-D219A01B977E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAA_Level_02_Skills", "RAA_Level_02\RAA_Level_02_Skills.csproj", "{20550946-65A2-494F-AD25-D219A01B977E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

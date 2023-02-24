@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RAA_Level_02
+namespace RAA_Level_02_Skills
 {
     internal static class Utils
     {

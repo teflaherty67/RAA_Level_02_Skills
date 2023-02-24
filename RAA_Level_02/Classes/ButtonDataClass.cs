@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace RAA_Level_02
+namespace RAA_Level_02_Skills
 {
     internal class ButtonDataClass
     {
@@ -25,7 +25,7 @@ namespace RAA_Level_02
             Data.Image = BitmapToImageSource(smallImage);
 
             // set command availability
-            Data.AvailabilityClassName = "RAA_Level_02.CommandAvailability";
+            Data.AvailabilityClassName = "RAA_Level_02_Skills.CommandAvailability";
         }
         private Assembly GetAssembly()
         {

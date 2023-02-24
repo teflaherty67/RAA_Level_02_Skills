@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace RAA_Level_02
+namespace RAA_Level_02_Skills
 {
     /// <summary>
     /// Interaction logic for Window.xaml

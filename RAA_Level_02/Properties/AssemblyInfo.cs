@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RAA_Level_02")]
-[assembly: AssemblyDescription("Revit Add-In Description for RAA_Level_02")]
+[assembly: AssemblyTitle("RAA_Level_02_Skills")]
+[assembly: AssemblyDescription("Revit Add-In Description for RAA_Level_02_Skills")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YOUR COMPANY NAME")]
-[assembly: AssemblyProduct("RAA_Level_02 Revit C# .NET Add-In")]
+[assembly: AssemblyProduct("RAA_Level_02_Skills Revit C# .NET Add-In")]
 [assembly: AssemblyCopyright("Copyright (C) 2023 by YOUR NAME, YOUR COMPANY")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

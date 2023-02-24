@@ -11,7 +11,7 @@ using System.Reflection;
 
 #endregion
 
-namespace RAA_Level_02
+namespace RAA_Level_02_Skills
 {
     [Transaction(TransactionMode.Manual)]
     public class Command : IExternalCommand
