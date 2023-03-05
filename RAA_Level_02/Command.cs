@@ -58,7 +58,11 @@ namespace RAA_Level_02_Skills
             {
                 string[] cellData = data.Split(',');
                 dataList.Add(cellData);
-            }            
+            }
+            
+            // remove header row
+
+            dataList.RemoveAt(0);
 
             bool chbCheck1Result = curForm.GetCheckbox1();
 
@@ -75,6 +79,9 @@ namespace RAA_Level_02_Skills
 
             // go through csv data & do something
 
+            Transaction t = new Transaction(doc);
+            t.Start("Create Levels");
+
             foreach (string[] curArray in dataList)
             {
                 string text = curArray[0];
@@ -83,9 +90,55 @@ namespace RAA_Level_02_Skills
                 double actualNumber = 0;
 
                 bool convertNumber = double.TryParse(number, out actualNumber);
+
+                // same code as TryParse
+
+                double actualNumber2 = 0;
+
+                try
+                {
+                    actualNumber2 = double.Parse(number);
+                }
+                catch (Exception)
+                {
+                    TaskDialog.Show("Error", "The item in the number column is not a number");
+                }
+
+                if(convertNumber == true)
+                {
+                    TaskDialog.Show("Error", "The item in the number column is not a number");
+                }               
+
+                Level curLevel = Level.Create(doc, actualNumber);
+                curLevel.Name = text;
+
+                ViewFamilyType floorVFT = GetViewFamilyTypeByName(doc, "Floor Plan", ViewFamily.FloorPlan);
+                ViewFamilyType ceilingVFT = GetViewFamilyTypeByName(doc, "Ceiling Plan", ViewFamily.CeilingPlan);
+
+                ViewPlan floorPlan = ViewPlan.Create(doc, floorVFT.Id, curLevel.Id);
+                ViewPlan ceilingPlan = ViewPlan.Create(doc, ceilingVFT.Id, curLevel.Id);
             }
 
+            t.Commit();
+            t.Dispose();
+
             return Result.Succeeded;
+        }
+
+        private ViewFamilyType GetViewFamilyTypeByName(Document doc, string typeName, ViewFamily viewFamily)
+        {
+            FilteredElementCollector collector = new FilteredElementCollector(doc);
+            collector.OfClass(typeof(ViewFamilyType));
+
+            foreach(ViewFamilyType curVFT in collector)
+            {
+                if(curVFT.Name == typeName && curVFT.ViewFamily == viewFamily) 
+                {
+                return curVFT;
+                }
+            }
+
+            return null;
         }
 
         public static String GetMethod()
