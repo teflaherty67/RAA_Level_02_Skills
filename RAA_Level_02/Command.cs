@@ -48,7 +48,17 @@ namespace RAA_Level_02_Skills
 
             // do something
 
+            List<string[]> dataList = new List<string[]>();
+
             string tbxResult = curForm.tbxFile.Text;
+
+            string[] dataArray = System.IO.File.ReadAllLines(tbxResult);
+
+            foreach( string data in dataArray )
+            {
+                string[] cellData = data.Split(',');
+                dataList.Add(cellData);
+            }            
 
             bool chbCheck1Result = curForm.GetCheckbox1();
 
@@ -62,6 +72,18 @@ namespace RAA_Level_02_Skills
             }
 
             TaskDialog.Show("Test", rbGroup1Result);
+
+            // go through csv data & do something
+
+            foreach (string[] curArray in dataList)
+            {
+                string text = curArray[0];
+                string number = curArray[1];
+
+                double actualNumber = 0;
+
+                bool convertNumber = double.TryParse(number, out actualNumber);
+            }
 
             return Result.Succeeded;
         }
