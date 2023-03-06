@@ -32,9 +32,11 @@ namespace RAA_Level_02_Skills
 
             // 3. Create button data instances
             ButtonDataClass myButtonData = new ButtonDataClass("btnRAA_Level_02_Skills", "My Button", Command.GetMethod(), Properties.Resources.Blue_32, Properties.Resources.Blue_16, "This is a tooltip");
+            ButtonDataClass myButtonData2 = new ButtonDataClass("btnRAA_Module_02_Skills", "My Button 2", Command2.GetMethod(), Properties.Resources.Red_32, Properties.Resources.Red_16, "This is a tooltip for Button 2");
 
             // 4. Create buttons
             PushButton myButton = panel.AddItem(myButtonData.Data) as PushButton;
+            PushButton myButton2 = panel.AddItem(myButtonData2.Data) as PushButton;
             return Result.Succeeded;
         }
 
