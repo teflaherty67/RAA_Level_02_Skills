@@ -35,16 +35,26 @@ namespace RAA_Level_02_Skills
 
             foreach(string item in listBoxItems)
             {
-                lbxText.Items.Add(item);
-            }            
+                lbxText.Items.Add(item);                
+            }
+
+            cmbViews.Items.Add("This is my first combobox item");
+            cmbViews.Items.Add("This is my second combobox item");
+
+            cmbViews.SelectedIndex = 0;
         }
 
         public void DocumentTest()
         {
             FilteredElementCollector collector = new FilteredElementCollector(myDoc);
             collector.OfCategory(BuiltInCategory.OST_Views);
+            collector.WhereElementIsNotElementType();
 
-            TaskDialog.Show("Test", "There are " + collector.Count().ToString() + " views in the model.");
+            foreach(View curView in collector)
+            {
+                lbxText.Items.Add(curView.Name);
+                cmbViews.Items.Add(curView.Name);
+            }            
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
