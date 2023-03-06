@@ -25,13 +25,18 @@ namespace RAA_Level_02_Skills
     public partial class MyForm2 : Window
     {
         public Document myDoc;
-        public MyForm2(string testText, Document doc)
+        public MyForm2(string testText, Document doc, List<string> listBoxItems)
         {
-            InitializeComponent()
+            InitializeComponent();
 
             myDoc = doc;
 
             lblLabel.Content = testText + doc.PathName;
+
+            foreach(string item in listBoxItems)
+            {
+                lbxText.Items.Add(item);
+            }            
         }
 
         public void DocumentTest()
@@ -39,7 +44,7 @@ namespace RAA_Level_02_Skills
             FilteredElementCollector collector = new FilteredElementCollector(myDoc);
             collector.OfCategory(BuiltInCategory.OST_Views);
 
-            TaskDialog.Show("Test", "There are " + collector.Count.ToString() + " views in the model.");
+            TaskDialog.Show("Test", "There are " + collector.Count().ToString() + " views in the model.");
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)

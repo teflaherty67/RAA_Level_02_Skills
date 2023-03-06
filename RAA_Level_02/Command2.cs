@@ -29,7 +29,10 @@ namespace RAA_Level_02_Skills
             // step 1: put any code needed for the form here
 
             // step 2: open form
-            MyForm2 curForm = new MyForm2("This is the text from the command file!", doc)
+
+            List<string> args = new List<string> { "abc", "bcd", "cde", "def" };
+
+            MyForm2 curForm = new MyForm2("This is the text from the command file!", doc, args)
             {
                 Width = 500,
                 Height = 450,

@@ -24,7 +24,11 @@
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <Label x:Name="lblLabel" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14">This is my Form 2</Label>
+
+            <ListBox x:Name="lbxText" Grid.Row="4" Grid.Column="1" Margin="20,0,20,0"/>
+
             <Button x:Name="btnOK" Grid.Row="6" Width="100" Height="30" Content="OK" Grid.Column="1" Click="btnOK_Click"/>
+            
 
         </Grid>
     </Border>    
