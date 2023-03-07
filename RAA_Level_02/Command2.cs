@@ -42,6 +42,21 @@ namespace RAA_Level_02_Skills
 
             curForm.ShowDialog();
 
+            string cmbString = curForm.GetSelectedComboBoxItem();
+            List<string> lbxString = curForm.GetSelectedListBoxItems();
+
+            MyForm2 curForm2 = new MyForm2(cmbString, doc, lbxString)
+            {
+                Width = 500,
+                Height = 450,
+                WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
+                Topmost = true,
+            };
+
+            curForm2.ShowDialog();
+
+            string cmbString2 = curForm2.GetSelectedComboBoxItem();
+            List<string> lbxString2 = curForm2.GetSelectedListBoxItems();
 
             return Result.Succeeded;
         }

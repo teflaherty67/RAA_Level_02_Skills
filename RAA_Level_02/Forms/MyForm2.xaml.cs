@@ -42,6 +42,8 @@ namespace RAA_Level_02_Skills
             cmbViews.Items.Add("This is my second combobox item");
 
             cmbViews.SelectedIndex = 0;
+
+            DocumentTest();
         }
 
         public void DocumentTest()
@@ -57,9 +59,27 @@ namespace RAA_Level_02_Skills
             }            
         }
 
+        public string GetSelectedComboBoxItem()
+        {
+            return cmbViews.SelectedItem.ToString();
+        }
+
+        public List<string> GetSelectedListBoxItems()
+        {
+            List<string> returnLIst = new List<string>();
+
+            foreach(var item in lbxText.SelectedItems)
+            {
+                returnLIst.Add(item.ToString());
+            }
+
+            return returnLIst;
+        }
+
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            DocumentTest();
+            this.DialogResult = true;
+            this.Close();
         }
     }
 }
