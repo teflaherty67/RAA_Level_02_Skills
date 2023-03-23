@@ -32,7 +32,7 @@ namespace RAA_Level_02_Skills
 
             List<string> args = new List<string> { "abc", "bcd", "cde", "def" };
 
-            MyForm2 curForm = new MyForm2("This is the text from the command file!", doc, args)
+            MyForm2 curForm = new MyForm2("", doc, null)
             {
                 Width = 500,
                 Height = 450,
@@ -41,6 +41,15 @@ namespace RAA_Level_02_Skills
             };
 
             curForm.ShowDialog();
+
+            List<Reference> refList = new List<Reference>();
+            bool flag = true;
+
+            while (flag == true)
+            {
+                Reference curRef = uidoc.Selection.PickObject(ObjectType.Element, "Pick an item");
+                refList.Add(curRef);
+            }
 
             string cmbString = curForm.GetSelectedComboBoxItem();
             List<string> lbxString = curForm.GetSelectedListBoxItems();

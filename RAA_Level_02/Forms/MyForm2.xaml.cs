@@ -31,22 +31,25 @@ namespace RAA_Level_02_Skills
 
             myDoc = doc;
 
-            lblLabel.Content = testText + doc.PathName;
+            if (testText == "" && listBoxItems == null)
+                PopulateControls();
 
-            foreach(string item in listBoxItems)
+            else
             {
-                lbxText.Items.Add(item);                
+                lblLabel.Content = testText + doc.PathName;
+
+                foreach (string item in listBoxItems)
+                {
+                    lbxText.Items.Add(item);
+                }
+
+                cmbViews.Items.Add(testText);               
             }
 
-            cmbViews.Items.Add("This is my first combobox item");
-            cmbViews.Items.Add("This is my second combobox item");
-
             cmbViews.SelectedIndex = 0;
-
-            DocumentTest();
         }
 
-        public void DocumentTest()
+        public void PopulateControls()
         {
             FilteredElementCollector collector = new FilteredElementCollector(myDoc);
             collector.OfCategory(BuiltInCategory.OST_Views);
