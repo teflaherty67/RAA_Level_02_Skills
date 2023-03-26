@@ -47,11 +47,19 @@ namespace RAA_Level_02_Skills
 
             while (flag == true)
             {
-                Reference curRef = uidoc.Selection.PickObject(ObjectType.Element, "Pick an item");
-                refList.Add(curRef);
+                try
+                {
+                    Reference curRef = uidoc.Selection.PickObject(ObjectType.Element, "Pick an item");
+                    refList.Add(curRef);
+                }
+                catch (Exception)
+                {
+
+                    flag = false;
+                }               
             }
 
-            string cmbString = curForm.GetSelectedComboBoxItem();
+            string cmbString = "There are " + refList.Count.ToString() + " selected elements";
             List<string> lbxString = curForm.GetSelectedListBoxItems();
 
             MyForm2 curForm2 = new MyForm2(cmbString, doc, lbxString)
