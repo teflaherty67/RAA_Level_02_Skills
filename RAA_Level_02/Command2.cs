@@ -7,6 +7,7 @@ using Autodesk.Revit.UI.Selection;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 
 #endregion
@@ -45,19 +46,41 @@ namespace RAA_Level_02_Skills
             List<Reference> refList = new List<Reference>();
             bool flag = true;
 
-            while (flag == true)
+            try
             {
-                try
-                {
-                    Reference curRef = uidoc.Selection.PickObject(ObjectType.Element, "Pick an item");
-                    refList.Add(curRef);
-                }
-                catch (Exception)
-                {
-
-                    flag = false;
-                }               
+                refList = uidoc.Selection.PickObjects(ObjectType.Element, "Pick some items.").ToList<Reference>();
             }
+            catch (Exception)
+            {
+
+            }
+
+            List<Viewport> viewportList = new List<Viewport>();
+            
+            foreach(Reference curRef in refList)
+            {
+                Element curElem = doc.GetElement(curRef);
+
+                if(curElem is Viewport)
+                {
+                    Viewport curVP = curElem as Viewport;
+                    viewportList.Add(curVP);
+                }                
+            }
+                  
+            //while (flag == true)
+            //{
+            //    try
+            //    {
+            //        Reference curRef = uidoc.Selection.PickObject(ObjectType.Element, "Pick an item. Click 'Esc' when finished.");
+            //        refList.Add(curRef);
+            //    }
+            //    catch (Exception)
+            //    {
+
+            //        flag = false;
+            //    }
+            //}
 
             string cmbString = "There are " + refList.Count.ToString() + " selected elements";
             List<string> lbxString = curForm.GetSelectedListBoxItems();
