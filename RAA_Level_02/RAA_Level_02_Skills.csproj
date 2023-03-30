@@ -63,6 +63,9 @@
     <Compile Include="Forms\MyForm2.xaml.cs">
       <DependentUpon>MyForm2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MyForm3.xaml.cs">
+      <DependentUpon>MyForm3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +95,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Forms\MyForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MyForm3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
